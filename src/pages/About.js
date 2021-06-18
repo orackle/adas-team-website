@@ -104,7 +104,7 @@ class About extends React.Component {
 					</p>
 				</div>
 
-				<div className="divider-thick hidden lg:mx-36 "></div>
+				<div className="divider-thick hidden lg:mx-36 " id="divider-1"></div>
 
 				{/* Initiative block */}
 				<div id="initiatives" className="my-12 lg:my-28 lg:mx-36">
@@ -114,7 +114,7 @@ class About extends React.Component {
 						Integer auctor at proin posuere etiam integer amet sed. Ut pellentesque nullam et
 						adipiscing ultrices amet, interdum eu vel.
 					</p>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-x-36 gap-y-10">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-x-36 gap-y-10" id="initiatives-list">
 						{this.state.initiatives &&
 							this.state.initiatives.map(({ name, description, contact }, i) => (
 								<Initiative
@@ -136,7 +136,7 @@ class About extends React.Component {
 							through virtual hangouts and study group sessions. There are tutors available to help
 							with various CMPUT, MATH and STAT courses.
 						</p>
-						<button className="w-64 self-center">
+						<button id="adas-slack-button" className="w-64 self-center">
 							<a
 								href="https://join.slack.com/t/adastutoring/shared_invite/zt-rxka4nnk-Ox~fBNx2XgXkU4gk9TLQfw"
 								alt="Ada's Team Tutoring Slack Invite Link"
@@ -155,7 +155,7 @@ class About extends React.Component {
 							opportunities and hackathons, review resumes, and hold each other accountable with
 							virtual coworking sessions.
 						</p>
-						<button className="w-64 self-center">
+						<button id="adas-discord-button" className="w-64 self-center">
 							<a
 								href="https://discord.gg/7ZhmzHZjc8"
 								alt="Ada's Team Discord Invite Link"
@@ -196,17 +196,17 @@ class About extends React.Component {
 const Executive = ({ image, role, name, description, contact }) => (
 	<div id="executives" className="blue-rect-shadow p-8 flex flex-col md:flex-row lg:mx-36 h-full">
 		{/* <div className="rounded-full w-full h-auto overflow-hidden"> */}
-		<div className="flex self-center md:mr-8" style={{ maxWidth: "240px", height: "auto" }}>
+		<div id="executive-list" className="flex self-center md:mr-8" style={{ maxWidth: "240px", height: "auto" }}>
 			<img
-				src={image == "" ? blank_user : image}
-				alt="Image of an executive of Ada's Team"
+				src={image === "" ? blank_user : image}
+				alt="An executive of Ada's Team"
 				className="rounded-full mb-8 md:mb-0 flex-1"
 			/>
 		</div>
 		<div className="flex justify-between flex-col my-2">
 			<div id="executive-information">
-				<div className="font-title font-bold text-xl">{name}</div>
-				<div className="mb-2 uppercase">
+				<div id="executive-name" className="font-title font-bold text-xl">{name}</div>
+				<div id="executive-role" className="mb-2 uppercase">
 					<p>
 						<em>{role}</em>
 					</p>
@@ -219,8 +219,8 @@ const Executive = ({ image, role, name, description, contact }) => (
 			{/* Executive Contact Information */}
 			<div id="executive-contact" className="mt-4 flex self-end space-x-2 text-xl">
 				{contact.LinkedIn && (
-					<div className="executive--contact">
-						<a href={contact.LinkedIn}>
+					<div className="executive--contact" id="executive-linkedin">
+						<a href={contact.LinkedIn} aria-label="LinkedIn link">
 							<FontAwesomeIcon icon={["fab", "linkedin"]} />
 							{/* <AiFillLinkedin /> */}
 						</a>
@@ -228,16 +228,16 @@ const Executive = ({ image, role, name, description, contact }) => (
 				)}
 
 				{contact.Github && (
-					<div className="executive--contact">
-						<a href={contact.Github} alt="Github">
+					<div className="executive--contact" id="executive-github">
+						<a href={contact.Github} alt="Github" aria-label="Github link">
 							<FontAwesomeIcon icon={["fab", "github"]} />
 						</a>
 					</div>
 				)}
 
 				{contact.Other && (
-					<div className="executive--contact">
-						<a className="Contact" href={contact.Other} alt="Contact">
+					<div className="executive--contact" id="executive-mail">
+						<a className="Contact" href={contact.Other} alt="Contact" aria-label="Mail information">
 							<FontAwesomeIcon icon={faEnvelope} />
 						</a>
 					</div>
@@ -259,7 +259,7 @@ const Initiative = ({ name, image, description, contact }) => (
 			<p>{description}</p>
 		</div>
 
-		<div className="initiative-social-media" className="my-2 space-x-4">
+		<div id="initiative-social-media" className="my-2 space-x-4">
 			{contact["instagram"] !== "" && (
 				<a href={contact["instagram"]} className="text-3xl">
 					<FontAwesomeIcon icon={["fab", "instagram"]} />

@@ -16,22 +16,22 @@ function SocialMedia() {
         <div
             className="space-x-3 text-3xl ">
             <a href="https://www.facebook.com/AdasTeamFB/"
-                alt="Ada's">
+                alt="Ada's" aria-label="Ada's facebook link">
                 <FontAwesomeIcon icon={['fab', 'facebook']}/>
             </a>
-            <a href="https://twitter.com/adas_team?lang=en">
+            <a href="https://twitter.com/adas_team?lang=en" aria-label="Ada's twitter link">
                 <FontAwesomeIcon icon={['fab', 'twitter']}/>
             </a>
-            <a href="https://www.instagram.com/adas_team/">
+            <a href="https://www.instagram.com/adas_team/" aria-label="Ada's instagram link">
                 <FontAwesomeIcon icon={['fab', 'instagram']}/>
             </a>
-            <a href="https://www.linkedin.com/company/adas-team/">
+            <a href="https://www.linkedin.com/company/adas-team/" aria-label="Ada's linkedin link">
                 <FontAwesomeIcon icon={['fab', 'linkedin']}/>
             </a>
-            <a href="https://github.com/adas-team">
+            <a href="https://github.com/adas-team" aria-label="Ada's github link">
                 <FontAwesomeIcon icon={['fab', 'github']}/>
             </a>
-            <a href="mailto:adasteam@ualberta.ca">
+            <a href="mailto:adasteam@ualberta.ca" aria-label="Ada's mail link">
                 <FontAwesomeIcon icon={faEnvelope}/>
             </a>
         </div>

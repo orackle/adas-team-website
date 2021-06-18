@@ -34,6 +34,7 @@ class JobBoard extends React.Component {
 	render() {
 		const { jobs } = this.state;
 		return (
+			
 			<div id="job-board-page" className="page">
 				<div
 					id="faq_image"
@@ -116,12 +117,12 @@ const JobPosting = ({
 	image,
 }) => (
 	<div className="p-4 lg:px-16 md:flex justify-between md:space-x-8 blue-rect rounded-xl">
-		<img className="hidden md:block h-24 w-auto" src={image ? image : blank_image} />
+		<img alt="Company logo" className="hidden md:block h-24 w-auto" src={image ? image : blank_image} />
 
 		<div className="md:flex-1">
 			<div className="flex md:flex-col justify-between space-x-8 md:space-x-0 font-title mb-4">
-				<img className="md:hidden h-24 w-auto" src={image ? image : blank_image} />
-				<div className="font-title flex-1">
+				<img alt="Company logo" className="md:hidden h-24 w-auto" src={image ? image : blank_image} />
+				<div className="font-title flex-1" id={title}>
 					<h4 className="">{title}</h4>
 					<a href={website}>{company}</a>
 					<p>{location}</p>
